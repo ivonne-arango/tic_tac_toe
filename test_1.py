@@ -64,7 +64,7 @@ def berlinClock(time):
 def test_one():
         assert  berlinClock("00:00:00") == ("Y\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO")
 def test_two():
-        assert  berlinClock("12:56:01") == ("Y\nRROO\nRROO\nYYRYYRYYRYY\nYOOO")
+        assert  berlinClock("12:56:00") == ("Y\nRROO\nRROO\nYYRYYRYYRYY\nYOOO")
 def test_three():
         assert  berlinClock("22:32:45") == ("O\nRRRR\nRROO\nYYRYYROOOOO\nYYOO")
 def test_four():
