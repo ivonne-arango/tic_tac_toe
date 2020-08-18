@@ -83,4 +83,11 @@ def test_ten():
         assert  berlinClock("00:30:00") == ("Y\nOOOO\nOOOO\nYYRYYROOOOO\nOOOO")
 def test_eleven():
         assert  berlinClock("00:45:00") == ("Y\nOOOO\nOOOO\nYYRYYRYYROO\nOOOO")
-
+def test_twelve():
+        assert  berlinClock("55:23:01") == ("O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO")
+def test_thirteen():
+        assert  berlinClock("ZA:00:01") == ("O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO")
+def test_fourteen():
+        assert  berlinClock("01:00:00") == ("Y\nOOOO\nROOO\nOOOOOOOOOOO\nOOOO")
+def test_fiveteen():
+        assert  berlinClock("00:59:59") == ("O\nOOOO\nOOOO\nYYRYYRYYRYY\nYYYY")
