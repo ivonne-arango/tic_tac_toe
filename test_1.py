@@ -77,5 +77,10 @@ def test_seven():
         assert  berlinClock("04:00:00") == ("Y\nOOOO\nRRRR\nOOOOOOOOOOO\nOOOO")
 def test_eight():
         assert  berlinClock("00:00:02") == ("Y\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO")
-
+def test_nine():
+        assert  berlinClock("00:15:00") == ("Y\nOOOO\nOOOO\nYYROOOOOOOO\nOOOO")
+def test_ten():
+        assert  berlinClock("00:30:00") == ("Y\nOOOO\nOOOO\nYYRYYROOOOO\nOOOO")
+def test_eleven():
+        assert  berlinClock("00:45:00") == ("Y\nOOOO\nOOOO\nYYRYYRYYROO\nOOOO")
 
