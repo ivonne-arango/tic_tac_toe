@@ -79,25 +79,25 @@ def berlinClock(time):
 #def test_midnight():
 #        assert  berlinClock("00:00:00") == ("Y\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO")
 #Test for valid hour with pair   seconds
-def test_vh_secpair():
-        assert  berlinClock("12:56:00") == ("Y\nRROO\nRROO\nYYRYYRYYRYY\nYOOO")
+#def test_vh_secpair():
+#        assert  berlinClock("12:56:00") == ("Y\nRROO\nRROO\nYYRYYRYYRYY\nYOOO")
 #Test for valid hour with inpair seconds
-def test_vh_secinpair():
-        assert  berlinClock("22:32:45") == ("O\nRRRR\nRROO\nYYRYYROOOOO\nYYOO")
+#def test_vh_secinpair():
+#        assert  berlinClock("22:32:45") == ("O\nRRRR\nRROO\nYYRYYROOOOO\nYYOO")
 #Test for valid hour same hour, minuts and seconds
-def test_vh_010101():
-        assert  berlinClock("01:01:01") == ("O\nOOOO\nROOO\nOOOOOOOOOOO\nYOOO")
+#def test_vh_010101():
+#        assert  berlinClock("01:01:01") == ("O\nOOOO\nROOO\nOOOOOOOOOOO\nYOOO")
 #Test for valid hour one second before midnight
-def test_vh_before_midnight():
-        assert  berlinClock("23:59:59") == ("O\nRRRR\nRRRO\nYYRYYRYYRYY\nYYYY")
+#def test_vh_before_midnight():
+#        assert  berlinClock("23:59:59") == ("O\nRRRR\nRRRO\nYYRYYRYYRYY\nYYYY")
 
 #Tests for quater of hour
-#def test_nine():
-#        assert  berlinClock("00:15:00") == ("Y\nOOOO\nOOOO\nYYROOOOOOOO\nOOOO")
-#def test_ten():
-#        assert  berlinClock("00:30:00") == ("Y\nOOOO\nOOOO\nYYRYYROOOOO\nOOOO")
-#def test_eleven():
-#        assert  berlinClock("00:45:00") == ("Y\nOOOO\nOOOO\nYYRYYRYYROO\nOOOO")
+def test_nine():
+        assert  berlinClock("00:15:00") == ("Y\nOOOO\nOOOO\nYYROOOOOOOO\nOOOO")
+def test_ten():
+        assert  berlinClock("00:30:00") == ("Y\nOOOO\nOOOO\nYYRYYROOOOO\nOOOO")
+def test_eleven():
+        assert  berlinClock("00:45:00") == ("Y\nOOOO\nOOOO\nYYRYYRYYROO\nOOOO")
 
 #Tests for hour invalid
 #def test_twelve():
