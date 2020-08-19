@@ -4,10 +4,9 @@ def validateTime(time):
     SS =time[6:9]
     lista1 = []
 
-    if HH.isdigit() == False:
+    if HH.isdigit() == False or MM.isdigit() == False or SS.isdigit() == False: 
         lista1.append(False)
         lista1.append("Formato invalido")
-        print  ("dentro del validate: ", lista1)
     else:
         lista1.append(True)
     return lista1
@@ -24,10 +23,7 @@ def berlinClock(time):
     validateTime(time)
     lista2 = []
     lista2 = validateTime(time)
-    print (lista2)
     if lista2[0] == False:
-        print ('regrese')
-        print (lista2)
         return lista2
     HH = int(time[0:2])
     MM = int(time[3:5])
@@ -92,5 +88,9 @@ def berlinClock(time):
     return str(SD + SalidaF) 
 
 #Tests for invalid format
-def test_invalid_format():
-        assert  berlinClock("XX:00:01") == [False,'Formato invalido']                                        
+def test_invalid_format_HH():
+        assert  berlinClock("XX:00:01") == [False,'Formato invalido']     
+def test_invalid_format_MM():
+        assert  berlinClock("23:YY:02") == [False,'Formato invalido']  
+def test_invalid_format_SS():
+        assert  berlinClock("20:00:SS") == [False,'Formato invalido']                                     
