@@ -1,7 +1,17 @@
 ---Se refactoriza el código para validar que la hora este en el rango de 1 a 24
 #Tests for invalid hour
 def test_invalid_hour_HH():
-        assert  berlinClock("70:00:01") == [False,'Hora fuera de rango']                                   
+        assert  berlinClock("70:00:01") == [False,'Hora fuera de rango']      
+
+---Se añade al código validaciones de rango para minutos y segundos. 
+
+#Tests for invalid hour
+def test_invalid_hour_HH():
+        assert  berlinClock("25:00:01") == [False,'Hora fuera de rango']     
+def test_invalid_hour_MM():
+        assert  berlinClock("00:66:00") == [False,'Hora fuera de rango']  
+def test_invalid_hour_SS():
+        assert  berlinClock("12:56:70") == [False,'Hora fuera de rango']                               
 
 
 
