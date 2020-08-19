@@ -2,3 +2,9 @@
 #Tests for invalid format
  def test_thirteen():
          assert  berlinClock("ZA:00:01") == ("Formato invalido")
+---Después de refactorizar el código validamos que la hora solo reciba datos numéricos
+#Tests for invalid format
+def test_invalid_format():
+        assert  berlinClock("XX:00:01") == [False,'Formato invalido']
+
+
