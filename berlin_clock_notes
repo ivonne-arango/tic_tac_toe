@@ -1,0 +1,4 @@
+---Se va a refactorizar el código para realizar la siguiente prueba, esto validará que la hora solo contenga números.
+#Tests for invalid format
+ def test_thirteen():
+         assert  berlinClock("ZA:00:01") == ("Formato invalido")

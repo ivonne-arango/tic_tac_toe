@@ -1,18 +1,26 @@
-#def validateTime(time):
-#    HH = int(time[0:2])
-#    MM = int(time[3:5])
-#    SS = int(time[6:9])
-
-#    if type(HH) == int and type(MM) == int and type(SS) == int:
+def validateTime(time):
+    HH =time[0:2]
+    MM =time[3:5]
+    SS =time[6:9]
+ 
+    if type(HH) != int or type(MM) != int or type(SS) != int:
+        print ("Formato invalido")
+        return False
+    return True
+        
 #        if HH >= 0 and HH<=24: 
 #            if MM >= 0 and MM<=59:
 #                if SS >= 0 and SS<=59:
+#                    true
 #        else:
 #            print ("hora fuera de rango")
 #            return "Formato inválido"
 
 def berlinClock(time):
- #   validateTime(time)
+    validateTime(time)
+    if validateTime(time) == False:
+#        print ("Formato invalido")
+        return False
     HH = int(time[0:2])
     MM = int(time[3:5])
     SS = int(time[6:9])
@@ -75,34 +83,6 @@ def berlinClock(time):
     print  (str(SD + SalidaF))
     return str(SD + SalidaF) 
 
-#Test for midnight
-#def test_midnight():
-#        assert  berlinClock("00:00:00") == ("Y\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO")
-#Test for valid hour with pair   seconds
-#def test_vh_secpair():
-#        assert  berlinClock("12:56:00") == ("Y\nRROO\nRROO\nYYRYYRYYRYY\nYOOO")
-#Test for valid hour with inpair seconds
-#def test_vh_secinpair():
-#        assert  berlinClock("22:32:45") == ("O\nRRRR\nRROO\nYYRYYROOOOO\nYYOO")
-#Test for valid hour same hour, minuts and seconds
-#def test_vh_010101():
-#        assert  berlinClock("01:01:01") == ("O\nOOOO\nROOO\nOOOOOOOOOOO\nYOOO")
-#Test for valid hour one second before midnight
-#def test_vh_before_midnight():
-#        assert  berlinClock("23:59:59") == ("O\nRRRR\nRRRO\nYYRYYRYYRYY\nYYYY")
-
-#Tests for quater of hour
-def test_nine():
-        assert  berlinClock("00:15:00") == ("Y\nOOOO\nOOOO\nYYROOOOOOOO\nOOOO")
-def test_ten():
-        assert  berlinClock("00:30:00") == ("Y\nOOOO\nOOOO\nYYRYYROOOOO\nOOOO")
-def test_eleven():
-        assert  berlinClock("00:45:00") == ("Y\nOOOO\nOOOO\nYYRYYRYYROO\nOOOO")
-
-#Tests for hour invalid
-#def test_twelve():
-#        assert  berlinClock("55:23:01") == ("O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO")
-
 #Tests for invalid format
-#def test_thirteen():
-#        assert  berlinClock("ZA:00:01") == ("Formato inválido")
+def test_invalid_format():
+        assert  berlinClock("ZA:00:01") == ("Formato invalido")
