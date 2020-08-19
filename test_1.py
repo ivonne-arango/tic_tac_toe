@@ -7,18 +7,18 @@ def validateTime(time):
     if HH.isdigit() == False or MM.isdigit() == False or SS.isdigit() == False: 
         lista1.append(False)
         lista1.append("Formato invalido")
-    else:
-        lista1.append(True)
-    return lista1
         
-#        if HH >= 0 and HH<=24: 
-#            if MM >= 0 and MM<=59:
-#                if SS >= 0 and SS<=59:
-#                    true
-#        else:
-#            print ("hora fuera de rango")
-#            return "Formato inválido"
+    if int(HH) >= 0 and int(HH)<=24: 
+        if int(MM) >= 0 and int(MM)<=59:
+            if int(SS) >= 0 and int(SS)<=59:
+                lista1.append(True)
+    else:
+        lista1.append(False)
+        lista1.append("Hora fuera de rango")
+    
+    return lista1
 
+ # MAIN Function
 def berlinClock(time):
     validateTime(time)
     lista2 = []
@@ -88,9 +88,9 @@ def berlinClock(time):
     return str(SD + SalidaF) 
 
 #Tests for invalid format
-def test_invalid_format_HH():
-        assert  berlinClock("XX:00:01") == [False,'Formato invalido']     
-def test_invalid_format_MM():
-        assert  berlinClock("23:YY:02") == [False,'Formato invalido']  
-def test_invalid_format_SS():
-        assert  berlinClock("20:00:SS") == [False,'Formato invalido']                                     
+def test_invalid_hour_HH():
+        assert  berlinClock("70:00:01") == [False,'Hora fuera de rango']     
+def test_valid_hour_MM():
+        assert  berlinClock("00:00:00") == ("Y\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO") 
+def test_valid_hour_SS():
+        assert  berlinClock("12:56:00") == ("Y\nRROO\nRROO\nYYRYYRYYRYY\nYOOO")                                    

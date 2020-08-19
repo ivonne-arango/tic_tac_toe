@@ -1,19 +1,7 @@
----Se va a refactorizar el código para realizar la siguiente prueba, esto validará que la hora solo contenga números.
-#Tests for invalid format
- def test_thirteen():
-         assert  berlinClock("ZA:00:01") == ("Formato invalido")
----Después de refactorizar el código validamos que la hora solo reciba datos numéricos
-#Tests for invalid format
-def test_invalid_format():
-        assert  berlinClock("XX:00:01") == [False,'Formato invalido']
----Se agrega código para validar minutos y segundos en formato numéricos
-#Tests for invalid format
-def test_invalid_format_HH():
-        assert  berlinClock("XX:00:01") == [False,'Formato invalido']     
-def test_invalid_format_MM():
-        assert  berlinClock("23:YY:02") == [False,'Formato invalido']  
-def test_invalid_format_SS():
-        assert  berlinClock("20:00:SS") == [False,'Formato invalido']                                     
+---Se refactoriza el código para validar que la hora este en el rango de 1 a 24
+#Tests for invalid hour
+def test_invalid_hour_HH():
+        assert  berlinClock("70:00:01") == [False,'Hora fuera de rango']                                   
 
 
 
