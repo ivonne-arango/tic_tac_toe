@@ -121,3 +121,27 @@ test_BClock_refactor.py      49      0   100%
 ============================================================================
 The round yellow light on top blinks to denote even- (when lit) or odd-numbered (when unlit) seconds.
     - There is one indicator for seconds, when is in Yellow indicates it's an even-numbered when is Off indicates an odd-numbered.
+
+
+#Test for seconds even number.
+def test_seconds_even_number():
+        assert  berlinClock("08:19:08") == ("Y\nROOO\nRRRO\nYYROOOOOOOO\nYYYY")
+
+#est for seconds odd number.
+def test_seconds_odd_number():
+        assert  berlinClock("23:31:01") == ("O\nRRRR\nRRRO\nYYRYYROOOOO\nYOOO")
+
+#Test for 59 seconds
+def test_59_seconds():
+        assert  berlinClock("00:47:59") == ("O\nOOOO\nOOOO\nYYRYYRYYROO\nYYOO")
+
+#Test for 00 seconds
+def test_00_seconds():
+        assert  berlinClock("10:58:00") == ("Y\nRROO\nOOOO\nYYRYYRYYRYY\nYYYO")
+
+test_BClock_refactor.py ....                                                            [100%]
+
+---------- coverage: platform darwin, python 3.8.5-final-0 -----------
+Name                      Stmts   Miss  Cover
+---------------------------------------------
+test_BClock_refactor.py      53      0   100%
