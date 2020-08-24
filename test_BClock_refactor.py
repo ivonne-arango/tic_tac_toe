@@ -18,5 +18,9 @@ def berlinClock(time):
 
 
 #Test for 5 hours indicator
-def test_5_hours():
+def test_5_hours_2R2O():
         assert  berlinClock("12:00:00") == ("RROO")
+def test_5_hours_4R():
+        assert  berlinClock("20:00:00") == ("RRRR")
+def test_5_hours_4O():
+        assert  berlinClock("04:00:00") == ("OOOO")
