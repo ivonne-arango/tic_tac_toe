@@ -90,3 +90,34 @@ test_BClock_refactor.py      42      0   100%
 ============================================================================
 The bottom row (4 line) has another four yellow fields, which mark one full minute each.
     -There are 4 indicators each one for 1 minute.
+#Test for 1 minute all Off
+def test_1_minute_all_off():
+        assert  berlinClock("12:00:00") == ("RROO\nRROO\nOOOOOOOOOOO\nOOOO")
+
+#Test for 1 minute all on(Yellow).
+def test_1_minute_all_on():
+        assert  berlinClock("08:19:00") == ("ROOO\nRRRO\nYYROOOOOOOO\nYYYY")
+
+#Test for 1 minut 1 minute on
+def test_1_minute_1_min():
+        assert  berlinClock("23:31:00") == ("RRRR\nRRRO\nYYRYYROOOOO\nYOOO")
+
+#Test for 1 minut 2 minutes on
+def test_1_minute_2_min():
+        assert  berlinClock("00:47:00") == ("OOOO\nOOOO\nYYRYYRYYROO\nYYOO")
+
+#Test for 1 minut 3 minutes on
+def test_1_minute_3_min():
+        assert  berlinClock("10:58:00") == ("RROO\nOOOO\nYYRYYRYYRYY\nYYYO")
+
+test_BClock_refactor.py .....                                                           [100%]
+
+---------- coverage: platform darwin, python 3.8.5-final-0 -----------
+Name                      Stmts   Miss  Cover
+---------------------------------------------
+test_BClock_refactor.py      49      0   100%
+============================================================================
+============================================================================
+============================================================================
+The round yellow light on top blinks to denote even- (when lit) or odd-numbered (when unlit) seconds.
+    - There is one indicator for seconds, when is in Yellow indicates it's an even-numbered when is Off indicates an odd-numbered.

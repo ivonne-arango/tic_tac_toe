@@ -2,17 +2,20 @@
 def berlinClock(time):
     HH  = int(time[0:2])
     MM  = int(time[3:5])
+    SS = int(time[6:9])
     HR5 = int(HH/5)
     HR1 = int(HH%5)
     MN5 = int(MM/5)
     MN1 = int(MM%5)
+    SD1 = int(SS%2)
+    SalidaF =""
 #Ciclo horas 5
     i=0
     salidaH1 = ["O","O","O","O"]
     while i < HR5:
         salidaH1[i]="R"      
         i += 1
-    SalidaF = str(salidaH1) 
+    SalidaF = "\n" + str(salidaH1)
 #Ciclo por horas 1
     salidaH2 = ["O","O","O","O"]
     i=0
@@ -37,29 +40,30 @@ def berlinClock(time):
         salidaM2[i]="Y"
         i += 1
     SalidaF = SalidaF + "\n" + str(salidaM2)
+    #Ciclo per seconds
+    SD = "O"  
+    if (SD1 == 0):
+        SD = "Y" 
+
     SalidaF = SalidaF.replace(",","")
     SalidaF = SalidaF.replace("'","")
     SalidaF = SalidaF.replace("[","")
     SalidaF = SalidaF.replace("]","")
     SalidaF = SalidaF.replace(" " ,"")
-    return str(SalidaF)
+    return str(SD + SalidaF) 
 
-#Test for 1 minute all Off
-def test_1_minute_all_off():
-        assert  berlinClock("12:00:00") == ("RROO\nRROO\nOOOOOOOOOOO\nOOOO")
+#Test for seconds even number.
+def test_seconds_even_number():
+        assert  berlinClock("08:19:08") == ("Y\nROOO\nRRRO\nYYROOOOOOOO\nYYYY")
 
-#Test for 1 minute all on(Yellow).
-def test_1_minute_all_on():
-        assert  berlinClock("08:19:00") == ("ROOO\nRRRO\nYYROOOOOOOO\nYYYY")
+#est for seconds odd number.
+def test_seconds_odd_number():
+        assert  berlinClock("23:31:01") == ("O\nRRRR\nRRRO\nYYRYYROOOOO\nYOOO")
 
-#Test for 1 minut 1 minute on
-def test_1_minute_1_min():
-        assert  berlinClock("23:31:00") == ("RRRR\nRRRO\nYYRYYROOOOO\nYOOO")
+#Test for 59 seconds
+def test_59_seconds():
+        assert  berlinClock("00:47:59") == ("O\nOOOO\nOOOO\nYYRYYRYYROO\nYYOO")
 
-#Test for 1 minut 2 minutes on
-def test_1_minute_2_min():
-        assert  berlinClock("00:47:00") == ("OOOO\nOOOO\nYYRYYRYYROO\nYYOO")
-
-#Test for 1 minut 3 minutes on
-def test_1_minute_3_min():
-        assert  berlinClock("10:58:00") == ("RROO\nOOOO\nYYRYYRYYRYY\nYYYO")
+#Test for 00 seconds
+def test_00_seconds():
+        assert  berlinClock("10:58:00") == ("Y\nRROO\nOOOO\nYYRYYRYYRYY\nYYYO")
