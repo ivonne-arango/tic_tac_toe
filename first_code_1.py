@@ -8,7 +8,7 @@ def validateTime(time):
         lista1.append(False)
         lista1.append("Formato invalido")
 #Validate range for hours, minutes and seconds
-    if (int(HH) >= 0 and int(HH)<=24) and (int(MM) >= 0 and int(MM)<=59) and (int(SS) >= 0 and int(SS)<=59):
+    if (int(HH) >= 0 and int(HH)<=23) and (int(MM) >= 0 and int(MM)<=59) and (int(SS) >= 0 and int(SS)<=59):
         lista1.append(True)
     else:
         lista1.append(False)
@@ -34,22 +34,11 @@ def berlinClock(time):
     SD = "O"
     SalidaF =""
     if (SD1 == 0):
-        SD = "Y"
-    print ("HH: " ,HH)    
-    print ("MM: ", MM)    
-    print ("SS: ", SS)    
-    print ("HR5: ", HR5)    
-    print ("HR1: ", HR1)    
-    print ("MN5: ", MN5)    
-    print ("MN1: ", MN1)    
-    print ("SD1: ",SD1)    
-    print ("SD: ",SD)    
-
+        SD = "Y"   
 #Ciclo horas 5
     i=0
     salidaH1 = ["O","O","O","O"]
     while i < HR5:
-        print (i) 
         salidaH1[i]="R"      
         i += 1
     SalidaF = SalidaF + "\n" + str(salidaH1)  

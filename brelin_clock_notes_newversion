@@ -2,4 +2,34 @@
 Description Berlin clock kata:
 -The clock is read from the top row to the bottom. The top row of four red fields denote five full hours each.
     -The first line have 4 indicators, each one could be Off or Red.
-    -Each indicador show 5 hours.    
+    -Each indicador show 5 hours.
+#Test for 5 hours indicator
+def test_5_hours_2R2O():
+        assert  berlinClock("12:00:00") == ("RROO")
+def test_5_hours_4R():
+        assert  berlinClock("20:00:00") == ("RRRR")
+def test_5_hours_4O():
+        assert  berlinClock("04:00:00") == ("OOOO")
+        
+Ivonnes-MacBook-Pro:Berlin_clock ivonne$ pytest --cov
+===================================== test session starts =====================================
+platform darwin -- Python 3.8.5, pytest-6.0.1, py-1.9.0, pluggy-0.13.1
+rootdir: /Users/ivonne/Documents/XPFarm/Berlin_clock
+plugins: xdist-2.0.0, cov-2.10.1, forked-1.3.0
+collected 1 item                                                                              
+
+test_BClock_refactor.py .                                                               [100%]
+
+---------- coverage: platform darwin, python 3.8.5-final-0 -----------
+Name                      Stmts   Miss  Cover
+---------------------------------------------
+test_BClock_refactor.py      17      0   100%
+
+---------- coverage: platform darwin, python 3.8.5-final-0 -----------
+Name                      Stmts   Miss  Cover
+---------------------------------------------
+test_BClock_refactor.py      21      0   100%
+
+-The second row, also of four red fields, which denote one full hour each.
+    -Each indicator is for one hour complete, could be Red or Off.
+    
