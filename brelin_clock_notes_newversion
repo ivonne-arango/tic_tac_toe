@@ -1,0 +1,5 @@
+- We refactor all the code.
+Description Berlin clock kata:
+-The clock is read from the top row to the bottom. The top row of four red fields denote five full hours each.
+    -The first line have 4 indicators, each one could be Off or Red.
+    -Each indicador show 5 hours.    
