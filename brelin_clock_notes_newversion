@@ -145,3 +145,46 @@ test_BClock_refactor.py ....                                                    
 Name                      Stmts   Miss  Cover
 ---------------------------------------------
 test_BClock_refactor.py      53      0   100%
+
+============================================================================
+============================================================================
+============================================================================
+
+We add validations for review correct format in input time.
+    - We review the hour have an integer number between 0 and 23.
+    - We review the minutes have an integer number between 0 and 59.
+    - We review the seconds have an integer number between 0 and 59
+
+#Test for invalid format hour.
+def test_invalid_format_hour():
+        assert  berlinClock("AA:19:08") == [False,'Formato invalido']
+#Test for invalid range hour.
+def test_invalid_range_hour():
+        assert  berlinClock("24:00:00") == [False,'Hora fuera de rango']
+#Test for invalid format minutes.
+def test_invalid_format_minutes():
+        assert  berlinClock("08:MM:08") == [False,'Formato invalido']
+#Test for invalid range minutes.
+def test_invalid_range_minutes():
+        assert  berlinClock("08:60:08") == [False,'Hora fuera de rango']
+#Test for invalid format seconds.
+def test_invalid_format_seconds():
+        assert  berlinClock("08:19:SS") == [False,'Formato invalido']
+#Test for invalid range seconds.
+def test_invalid_range_seconds():
+        assert  berlinClock("08:19:90") == [False,'Hora fuera de rango']
+#Test for correct hour esc1.
+def test_correct_hour_esc1():
+        assert  berlinClock("08:19:08") == ("Y\nROOO\nRRRO\nYYROOOOOOOO\nYYYY")
+#Test for correct hour esc2.
+def test_correct_hour_esc2():
+        assert  berlinClock("23:31:01") == ("O\nRRRR\nRRRO\nYYRYYROOOOO\nYOOO")
+#Test for correct hour esc3
+def test_correct_hour_esc3():
+        assert  berlinClock("00:47:59") == ("O\nOOOO\nOOOO\nYYRYYRYYROO\nYYOO")
+test_BClock_refactor.py .........                                                       [100%]
+
+---------- coverage: platform darwin, python 3.8.5-final-0 -----------
+Name                      Stmts   Miss  Cover
+---------------------------------------------
+test_BClock_refactor.py      82      0   100%

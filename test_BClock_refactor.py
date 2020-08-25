@@ -1,8 +1,31 @@
+def validateTime(time):
+    HH =time[0:2]
+    MM =time[3:5]
+    SS =time[6:9]
+    lista1 = []
+#Validate format
+    if HH.isdigit() == False or MM.isdigit() == False or SS.isdigit() == False: 
+        lista1.append(False)
+        lista1.append("Formato invalido")
+        return lista1
+#Validate range for hours, minutes and seconds
+    if (int(HH) >= 0 and int(HH)<=23) and (int(MM) >= 0 and int(MM)<=59) and (int(SS) >= 0 and int(SS)<=59):
+        lista1.append(True)
+    else:
+        lista1.append(False)
+        lista1.append("Hora fuera de rango")
+    
+    return lista1
  # MAIN Function
 def berlinClock(time):
+    validateTime(time)
+    lista2 = []
+    lista2 = validateTime(time)
+    if lista2[0] == False:
+        return lista2
     HH  = int(time[0:2])
     MM  = int(time[3:5])
-    SS = int(time[6:9])
+    SS  = int(time[6:9])
     HR5 = int(HH/5)
     HR1 = int(HH%5)
     MN5 = int(MM/5)
@@ -52,18 +75,30 @@ def berlinClock(time):
     SalidaF = SalidaF.replace(" " ,"")
     return str(SD + SalidaF) 
 
-#Test for seconds even number.
-def test_seconds_even_number():
+#Test for invalid format hour.
+def test_invalid_format_hour():
+        assert  berlinClock("AA:19:08") == [False,'Formato invalido']
+#Test for invalid range hour.
+def test_invalid_range_hour():
+        assert  berlinClock("24:00:00") == [False,'Hora fuera de rango']
+#Test for invalid format minutes.
+def test_invalid_format_minutes():
+        assert  berlinClock("08:MM:08") == [False,'Formato invalido']
+#Test for invalid range minutes.
+def test_invalid_range_minutes():
+        assert  berlinClock("08:60:08") == [False,'Hora fuera de rango']
+#Test for invalid format seconds.
+def test_invalid_format_seconds():
+        assert  berlinClock("08:19:SS") == [False,'Formato invalido']
+#Test for invalid range seconds.
+def test_invalid_range_seconds():
+        assert  berlinClock("08:19:90") == [False,'Hora fuera de rango']
+#Test for correct hour esc1.
+def test_correct_hour_esc1():
         assert  berlinClock("08:19:08") == ("Y\nROOO\nRRRO\nYYROOOOOOOO\nYYYY")
-
-#est for seconds odd number.
-def test_seconds_odd_number():
+#Test for correct hour esc2.
+def test_correct_hour_esc2():
         assert  berlinClock("23:31:01") == ("O\nRRRR\nRRRO\nYYRYYROOOOO\nYOOO")
-
-#Test for 59 seconds
-def test_59_seconds():
+#Test for correct hour esc3
+def test_correct_hour_esc3():
         assert  berlinClock("00:47:59") == ("O\nOOOO\nOOOO\nYYRYYRYYROO\nYYOO")
-
-#Test for 00 seconds
-def test_00_seconds():
-        assert  berlinClock("10:58:00") == ("Y\nRROO\nOOOO\nYYRYYRYYRYY\nYYYO")
