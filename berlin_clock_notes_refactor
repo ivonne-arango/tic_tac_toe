@@ -2,4 +2,5 @@
 - Quitamos algunos comentarios inecesarios.
 - Los pocos comentarios que dejamos son mas descriptivos.
 - Se reviso que no hubiese código repetido y que fuera lo más óptimo posible.
-- Se modificaron pocas cosas ya que ya se han hecho varias refactorizaciones.
+- Se modificaron pocas cosas ya que ya se han hecho varias limpiezas de código en las anteriores refactorizaciones.
+- Se reviso el clean code checklist y se aplicó a nuestro código.
