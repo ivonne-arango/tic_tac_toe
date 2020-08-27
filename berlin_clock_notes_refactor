@@ -1,0 +1,5 @@
+- Mejoramos los nombres de las variables para hacer el código más entendible.
+- Quitamos algunos comentarios inecesarios.
+- Los pocos comentarios que dejamos son mas descriptivos.
+- Se reviso que no hubiese código repetido y que fuera lo más óptimo posible.
+- Se modificaron pocas cosas ya que ya se han hecho varias refactorizaciones.
