@@ -16,9 +16,54 @@ def validateTime(time):
         SalidaValidate.append("Hora fuera de rango")   
     return SalidaValidate    
 
+def validation_seconds_first_line(SegundosBerlin):
+    SalidaSegundos = "O"  
+    if (SegundosBerlin == 0):
+        SalidaSegundos = "Y" 
+    return SalidaSegundos
+
+def loop5hours_second_line(HorasBerlin5):
+    i=0
+    SalidaHoras5 = ["O","O","O","O"]
+    while i < HorasBerlin5:
+        SalidaHoras5[i]="R"      
+        i += 1
+    return ("\n" + str(SalidaHoras5))
+#
+#
+def loop1hour_third_line(HorasBerlin1):
+    SalidaHoras1 = ["O","O","O","O"]
+    i=0
+    while i < HorasBerlin1:
+        SalidaHoras1[i]="R"
+        i += 1  
+    return ("\n" + str(SalidaHoras1))
+#
+#
+def loop5minutes_fourth_line(MinutosBerlin5):
+    SalidaMinutos5 = ["O","O","O","O","O","O","O","O","O","O","O"]
+    i=0
+    while i< MinutosBerlin5:
+        if (i == 2 or i==5 or i==8):
+            SalidaMinutos5[i]="R"
+        else: 
+            SalidaMinutos5[i]="Y"
+        i += 1  
+    return("\n" + str(SalidaMinutos5))
+#
+# 
+def loop1minute_fifth_line(MinutosBerlin1):
+    SalidaMinutos1 = ["O","O","O","O"]
+    i = 0
+    while i < MinutosBerlin1:
+        SalidaMinutos1[i]="Y"
+        i += 1
+    return("\n" + str(SalidaMinutos1))
+#
+#   
  # MAIN Function
 def berlinClock(time):
-    validateTime(time)
+ #   validateTime(time)
     SalidaBerlinErr   = []
     SalidaBerlinErr   = validateTime(time)
     if SalidaBerlinErr[0] == False:
@@ -33,50 +78,22 @@ def berlinClock(time):
     MinutosBerlin1  = int(MinutosBerlin%5)
     SegundosBerlin  = int(SegungosBerlin%2)
     SalidaBerlin =""
-#Loop per 5 hours,variable i, is a counter
-    i=0
-    SalidaHoras5 = ["O","O","O","O"]
-    while i < HorasBerlin5:
-        SalidaHoras5[i]="R"      
-        i += 1
-    SalidaBerlin = "\n" + str(SalidaHoras5)
-#Loop per 1 hour, variable i, is a counter
-    SalidaHoras1 = ["O","O","O","O"]
-    i=0
-    while i < HorasBerlin1:
-        SalidaHoras1[i]="R"
-        i += 1  
-    SalidaBerlin = SalidaBerlin + "\n" + str(SalidaHoras1)
-#Loop per 5 minutes, variable i, is a counter
-    SalidaMinutos5 = ["O","O","O","O","O","O","O","O","O","O","O"]
-    i=0
-    while i< MinutosBerlin5:
-        if (i == 2 or i==5 or i==8):
-            SalidaMinutos5[i]="R"
-        else: 
-            SalidaMinutos5[i]="Y"
-        i += 1  
-    SalidaBerlin = SalidaBerlin + "\n" + str(SalidaMinutos5) 
-#Loop per 1 minute, variable i, is a counter
-    SalidaMinutos1 = ["O","O","O","O"]
-    i = 0
-    while i < MinutosBerlin1:
-        SalidaMinutos1[i]="Y"
-        i += 1
-    SalidaBerlin = SalidaBerlin + "\n" + str(SalidaMinutos1)
-#Loop per seconds
-    SalidaSegundos = "O"  
-    if (SegundosBerlin == 0):
-        SalidaSegundos = "Y" 
+#    
+    SalidaBerlin = SalidaBerlin + validation_seconds_first_line(SegundosBerlin)
+#
+    SalidaBerlin = SalidaBerlin + loop5hours_second_line(HorasBerlin5)
+    SalidaBerlin = SalidaBerlin + loop1hour_third_line(HorasBerlin1)
+    SalidaBerlin = SalidaBerlin + loop5minutes_fourth_line(MinutosBerlin5)
+    SalidaBerlin = SalidaBerlin + loop1minute_fifth_line(MinutosBerlin1)
 
     SalidaBerlin = SalidaBerlin.replace(",","")
     SalidaBerlin = SalidaBerlin.replace("'","")
     SalidaBerlin = SalidaBerlin.replace("[","")
     SalidaBerlin = SalidaBerlin.replace("]","")
     SalidaBerlin = SalidaBerlin.replace(" " ,"")
-    return str(SalidaSegundos + SalidaBerlin) 
-
-
+    return SalidaBerlin
+#
+#
 #Test for correct hour esc1.
 def test_correct_hour_esc1():
         assert  berlinClock("08:19:08") == ("Y\nROOO\nRRRO\nYYROOOOOOOO\nYYYY")
