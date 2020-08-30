@@ -61,9 +61,9 @@ def loop1minute_fifth_line(MinutosBerlin1):
     return("\n" + str(SalidaMinutos1))
 #
 #   
- # MAIN Function
+# MAIN Function
 def berlinClock(time):
- #   validateTime(time)
+#   validateTime(time)
     SalidaBerlinErr   = []
     SalidaBerlinErr   = validateTime(time)
     if SalidaBerlinErr[0] == False:

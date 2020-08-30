@@ -1,6 +1,4 @@
-- Mejoramos los nombres de las variables para hacer el código más entendible.
-- Quitamos algunos comentarios inecesarios.
-- Los pocos comentarios que dejamos son mas descriptivos.
-- Se reviso que no hubiese código repetido y que fuera lo más óptimo posible.
-- Se modificaron pocas cosas ya que ya se han hecho varias limpiezas de código en las anteriores refactorizaciones.
-- Se reviso el clean code checklist y se aplicó a nuestro código.
+-Modularizamos el código aplicando los tres conceptos de:
+Naming: Cambiamos los nombres de variables para que fuera más entendible su función dentro del programa:
+Readeability: Se dividió el programa principal para manejar módulos pequeños que se puedan leer como el índice y contenido de un libro.
+Understandability: Al aplicar el punto anterior se vuelve más comprensible el programa y los resultados esperados.
