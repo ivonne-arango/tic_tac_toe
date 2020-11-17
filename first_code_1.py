@@ -1,23 +1,14 @@
-def validateTime(time):
-    HH =time[0:2]
-    MM =time[3:5]
-    SS =time[6:9]
-    lista1 = []
-#Validate format
-    if HH.isdigit() == False or MM.isdigit() == False or SS.isdigit() == False: 
-        lista1.append(False)
-        lista1.append("Formato invalido")
-#Validate range for hours, minutes and seconds
-    if (int(HH) >= 0 and int(HH)<=23) and (int(MM) >= 0 and int(MM)<=59) and (int(SS) >= 0 and int(SS)<=59):
-        lista1.append(True)
-    else:
-        lista1.append(False)
-        lista1.append("Hora fuera de rango")
-    
-    return lista1
+import random
+def generateName():
+    KEY_LEN = 6
+    letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+    name = ''
+    for i in range (KEY_LEN):
+      name = name + random.choice(letters)
+    return (name)
 
  # MAIN Function
-def berlinClock(time):
+def Tic_tac_toe(time):
     validateTime(time)
     lista2 = []
     lista2 = validateTime(time)
