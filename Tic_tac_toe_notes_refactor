@@ -1,4 +1,0 @@
--Modularizamos el código aplicando los tres conceptos de:
-Naming: Cambiamos los nombres de variables para que fuera más entendible su función dentro del programa:
-Readeability: Se dividió el programa principal para manejar módulos pequeños que se puedan leer como el índice y contenido de un libro.
-Understandability: Al aplicar el punto anterior se vuelve más comprensible el programa y los resultados esperados.
