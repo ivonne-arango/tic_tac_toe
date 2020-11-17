@@ -53,7 +53,10 @@ def test_gana_O_diagonal():
         assert  Tic_tac_toe(" ,X,O,O,O, ,X,X,O") == ['GANA O']  
 #Tests for tic_tac_toe draw
 def test_empate():
-        assert  Tic_tac_toe("O,X,O,X,X,O,X,O,X") == ['EMPATE']                               
+        assert  Tic_tac_toe("O,X,O,X,X,O,X,O,X") == ['EMPATE']    
+
+---Se lanzan las pruebas y se empieza la codificación a partir de ellas.     
+---Se hacen primeras pruebas con caso algunos casos existosos en ganador X para ir validando la primer casuistica ganadora.                      
 
 
 
