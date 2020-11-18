@@ -60,7 +60,10 @@ def test_empate():
 ---------- coverage: platform darwin, python 3.8.5-final-0 -----------
 Name              Stmts   Miss  Cover
 -------------------------------------
-first_code_1.py      31      4    87%                  
+first_code_1.py      31      4    87%
+
+-En esta prueba se cumplen dos condiciones de ganador por lo que está enviando un error en el resultado, se corregirá código
+-En esta prueba se corrige la prueba para que arroje el ganador correcto.
 
 
 

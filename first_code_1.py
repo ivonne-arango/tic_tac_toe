@@ -36,7 +36,7 @@ def Tic_tac_toe(data_array):
 def test_gana_X_horizontal():
         assert  Tic_tac_toe(["X","X","X","O","O","","X","0","X"]) == 'Ganador: X'   
 def test_gana_X_vertical():
-        assert  Tic_tac_toe(["O","X","O","O","X","X","O","X","O"]) == 'Ganador: X'  
+        assert  Tic_tac_toe(["O","X","O","O","X","X","","X","O"]) == 'Ganador: X'  
 def test_gana_X_diagonal():
         assert  Tic_tac_toe(["X","O","X","X","X","","O","0","X"]) == 'Ganador: X'
 def test_gana_X_horizontal_con_vacios():
