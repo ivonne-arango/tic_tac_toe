@@ -75,7 +75,13 @@ Name              Stmts   Miss  Cover
 first_code_1.py      53      7    87%
 
 -Se incluye prueba para empate
+---------- coverage: platform darwin, python 3.8.5-final-0 -----------
+Name              Stmts   Miss  Cover
+-------------------------------------
+first_code_1.py      55      8    85%
 
+Refactorización de código:
+Para que el código sea más entendible cambié el nombre de algunas variables y agrupe los casos ganadores en X y O.
 
 
 

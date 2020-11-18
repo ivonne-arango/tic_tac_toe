@@ -4,9 +4,9 @@
 
  # MAIN Function
 def Tic_tac_toe(data_array):
-    i=0
+    numero_tiros=0
     ganador = ""
-    while i< 9:
+    while numero_tiros< 9:
         if data_array[2] == "X" and  data_array[5] == "X" and data_array[8] == "X":
             ganador = "X"
         if data_array[0] == "X" and  data_array[1] == "X" and data_array[2] == "X":
@@ -35,7 +35,7 @@ def Tic_tac_toe(data_array):
             ganador = "O"
         if data_array[2] == "O" and  data_array[5] == "O" and data_array[8] == "O":
             ganador = "O"
-        i+=1
+        numero_tiros+=1
     if ganador == '':
         salida = "empate"
     else:
