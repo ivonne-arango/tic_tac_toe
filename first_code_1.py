@@ -31,6 +31,8 @@ def Tic_tac_toe(data_array):
             ganador = "O"
         if data_array[1] == "O" and  data_array[4] == "O" and data_array[7] == "O":
             ganador = "O"
+        if data_array[2] == "O" and  data_array[5] == "O" and data_array[8] == "O":
+            ganador = "O"
         i+=1
     if ganador == '':
         salida = "empate"
