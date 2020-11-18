@@ -49,6 +49,7 @@ def test_gana_X_horizontal_con_vacios():
         assert  Tic_tac_toe(["","","","X","X","X","","",""]) == 'Ganador: X' 
 def test_gana_O_horizontal_con_vacios():
         assert  Tic_tac_toe(["O","O","O","X"," ","X","","",""]) == 'Ganador: O' 
-        
+def test_gana_O_vertical_con_vacios():
+        assert  Tic_tac_toe(["X","","O","","","O","X","X","O"]) == 'Ganador: O' 
                                           
 
