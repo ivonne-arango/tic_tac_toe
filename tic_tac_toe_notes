@@ -56,7 +56,11 @@ def test_empate():
         assert  Tic_tac_toe("O,X,O,X,X,O,X,O,X") == ['EMPATE']    
 
 ---Se lanzan las pruebas y se empieza la codificación a partir de ellas.     
----Se hacen primeras pruebas con caso algunos casos existosos en ganador X para ir validando la primer casuistica ganadora.                      
+---Se hacen primeras pruebas con caso algunos casos existosos en ganador X para ir validando la primer casuistica ganadora.    
+---------- coverage: platform darwin, python 3.8.5-final-0 -----------
+Name              Stmts   Miss  Cover
+-------------------------------------
+first_code_1.py      31      4    87%                  
 
 
 
