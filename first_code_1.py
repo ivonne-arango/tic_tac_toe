@@ -59,5 +59,8 @@ def test_gana_O_vertical():
         assert  Tic_tac_toe(["X","","O","","","O","X","X","O"]) == 'Ganador: O' 
 def test_gana_O_diagonal():
         assert  Tic_tac_toe(["O","","","X","O","","X","X","O"]) == 'Ganador: O' 
-                                      
+def test_gana_O_diagonal():
+        assert  Tic_tac_toe(["O","X","O","X","X","O","X","O","X"]) == 'empate' 
+
+
 
