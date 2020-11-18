@@ -67,6 +67,12 @@ first_code_1.py      31      4    87%
 -En esta prueba se agrega funcionalidad para O's 
 -Se continúa codificando a partir de las pruebas.
 -Se modifica la prueba anterior ya que no obtuvimos resultado esperado.
+-Se agrega codigo para caso de prueba esperado O vertical en tercera columna.
+-Se incluye prueba de diagonal O 
+---------- coverage: platform darwin, python 3.8.5-final-0 -----------
+Name              Stmts   Miss  Cover
+-------------------------------------
+first_code_1.py      53      7    87%
 
 
 
