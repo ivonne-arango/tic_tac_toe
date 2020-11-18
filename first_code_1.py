@@ -19,11 +19,17 @@ def Tic_tac_toe(data_array):
             ganador = "X"
         if data_array[1] == "X" and  data_array[4] == "X" and data_array[7] == "X":
             ganador = "X"
-        if data_array[1] == "O" and data_array[4] == "O" and data_array[2] == "O":
-            ganador = 'O'
+        if data_array[0] == "O" and  data_array[1] == "O" and data_array[2] == "O":
+            ganador = "O"
+        if data_array[3] == "O" and  data_array[4] == "O" and data_array[5] == "O":
+            ganador = "O"
         if data_array[6] == "O" and  data_array[7] == "O" and data_array[8] == "O":
             ganador = "O"
         if data_array[0] == "O" and  data_array[3] == "O" and data_array[6] == "O":
+            ganador = "O"
+        if data_array[0] == "O" and  data_array[4] == "O" and data_array[8] == "O":
+            ganador = "O"
+        if data_array[1] == "O" and  data_array[4] == "O" and data_array[7] == "O":
             ganador = "O"
         i+=1
     if ganador == '':

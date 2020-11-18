@@ -64,6 +64,7 @@ first_code_1.py      31      4    87%
 
 -En esta prueba se cumplen dos condiciones de ganador por lo que está enviando un error en el resultado, se corregirá código
 -En esta prueba se corrige la prueba para que arroje el ganador correcto.
+-En esta prueba se agrega funcionalidad para O's 
 
 
 
